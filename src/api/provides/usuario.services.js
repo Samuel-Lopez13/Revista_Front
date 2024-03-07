@@ -1,5 +1,5 @@
 import {autorization, sinAutorizationJSON, autorizationJSON} from '@/api'
-import {BASEURL, CREDENCIALES} from "@/utils/constantes/Constantes";
+import {BASEURL, CREDENCIALES} from "@/utils/constantes/constantes.js";
 import axios from "axios";
 import {NotificacionExito} from "@/alertas/alert.js";
 import router from "@/router/index.js";

@@ -132,87 +132,96 @@ p {
     height: 750px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
 
-    .box__title {
-        width: 450px;
-        height: 80px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 
-        .title__h3 {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
 
-    .box__form {
-        width: 500px;
-        height: 650px;
-        gap: 30px;
-
-        .form__box {
-            width: 450px;
-            height: 80px;
-
-            .form__label {
-                width: 100%;
-                height: 40px;
-                font-family: Poppins;
-                font-weight: normal;
-                font-size: 18px;
-                color: var(--color-text_principal);
-            }
-
-            .form__input {
-                width: 100%;
-                height: 40px;
-                padding-left: 15px;
-                border: .5px solid rgba(0, 0, 0, 0.11);
-                border-radius: 5px;
-                font-size: 17px;
-                color: rgba(0, 0, 0, 0.5);
-            }
-
-            .form__input:focus {
-                outline: none;
-            }
-
-            .form__input::placeholder {
-                font-size: 15px;
-                color: rgba(0, 0, 0, 0.2);
-            }
-        }
-    }
-
-    .button__iniciar {
-        width: 450px;
-        height: 40px;
-        background-color: var(--color-principal);
-        font-family: Poppins;
-        font-weight: bold;
-        font-size: 20px;
-        color: white;
-        border-radius: 5px;
-        border: none;
-    }
-
-    .button__iniciar:hover {
-        background-color: #0078FF;
-    }
+       
 }
 
+.box__title {
+    width: 450px;
+    height: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+
+}
+
+.title__h3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box__form {
+    width: 500px;
+    height: 650px;
+    gap: 30px;
+
+
+}
+.form__box {
+    width: 450px;
+    height: 80px;
+
+    
+
+
+}
+.button__iniciar {
+    width: 450px;
+    height: 40px;
+    background-color: var(--color-principal);
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.button__iniciar:hover {
+    background-color: #0078FF;
+} 
 .contenedor__links {
     width: 100%;
     height: 60px;
     gap: 10px;
 
-    .links__pag {
-        cursor: pointer;
-        color: var(--color-principal);
-        text-decoration: underline;
-        text-decoration-color: var(--color-principal);;
-        text-decoration-thickness: 2px;
-    }
+    
+}
+.links__pag {
+    cursor: pointer;
+    color: var(--color-principal);
+    text-decoration: underline;
+    text-decoration-color: var(--color-principal);;
+    text-decoration-thickness: 2px;
+}
+.form__label {
+    width: 100%;
+    height: 40px;
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 18px;
+    color: var(--color-text_principal);
+}
+
+.form__input {
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    border: .5px solid rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.form__input::placeholder {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.form__input:focus {
+    outline: none;
 }
 </style>
