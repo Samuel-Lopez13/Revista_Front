@@ -1,0 +1,7 @@
+@import './base.css';
+
+:root{
+    --color-background: #F9FAFD;
+    --color-principal: #0062FF;
+    --color-text_principal: rgba(0,0,0,.5);
+}
