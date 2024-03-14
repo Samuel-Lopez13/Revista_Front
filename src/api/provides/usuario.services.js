@@ -27,7 +27,10 @@ export const DatosPersonales = {
         }
     },
 
+    //Crear usuario
     postUsuario: async (nombre, correo, contrasena, pais, afiliacion) => {
+        let respuesta = false
+
         try {
             const usuarioJSON = {
                 nombre: nombre,
@@ -48,7 +51,10 @@ export const DatosPersonales = {
             }, 1500);
 
         } catch (error) {
-            console.log(error)
+            respuesta = true
         }
+
+        return respuesta
+
     },
 }

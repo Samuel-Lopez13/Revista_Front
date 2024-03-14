@@ -41,7 +41,4 @@ nav {
     font-size: 32px;
     color: #0062FF;
 }
-
-
-
 </style>

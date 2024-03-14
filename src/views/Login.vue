@@ -3,11 +3,13 @@
 import router from "@/router/index.js";
 import {DatosPersonales} from "@/api/provides/usuario.services.js";
 import {ref} from "vue";
+import AlertPassword from "@/components/alertPassword.vue";
 
 /**************************************             VARIABLES             **********************************************/
 const correo = ref("")
 const contrasena = ref("")
 const alerta = ref(false)
+const password = ref('password');
 
 /*************************************             ON MOUNTED             **********************************************/
 
@@ -27,6 +29,22 @@ const agregarUsuario = async () => {
 const irResgistro = () => {
     router.push('/Registro')
 }
+
+const passwordView = () =>{
+    if (password.value === 'password'){
+        password.value = 'text'
+    }else{
+        password.value='password'
+    }
+}
+
+const blur = (event, value) =>{
+    if (value.trim() === '') {
+        event.target.classList.add('empty');
+    } else {
+        event.target.classList.remove('empty');
+    }
+}
 </script>
 
 <template>
@@ -42,24 +60,50 @@ const irResgistro = () => {
                     <h5>Nombre de usuario y/o contraseña incorrectos</h5>
                 </div>
                 <div class="form__box">
-                    <label class="form__label" for="correo">Correo electronico</label>
-                    <input v-model="correo" class="form__input" type="text" name="correo" placeholder="Correo electronico">
+                    <label class="form__label" for="correo">Correo electrónico</label>
+                    <input v-model="correo" @blur="blur($event, correo)" class="form__input form__input-correo" type="text" name="correo" placeholder="Correo electrónico">
                 </div>
                 <div class="form__box">
-                    <label class="form__label" for="contrasena">Contraseña</label>
-                    <input v-model="contrasena" class="form__input" type="password" name="contrasena" placeholder="Contraseña">
+                    <label class="form__label d-flex align-items-center gap-2" for="contrasena">
+                        Contraseña
+                    </label>
+                    <div class="input__pass d-flex">
+                        <input v-model="contrasena" @blur="blur($event, contrasena)" class="form__input form__input-password" :type="password" name="contrasena"
+                               placeholder="Contraseña">
+                        <img class="eyesPass" :src="password == 'password' ? 'https://res.cloudinary.com/dnbwjuwvx/image/upload/v1710405604/Icons/eyesCloses.svg' : 'https://res.cloudinary.com/dnbwjuwvx/image/upload/v1710405604/Icons/eyesOpen.svg'" role="button" @click="passwordView">
+                    </div>
                 </div>
-                <button class="button__iniciar">iniciar sesion</button>
+                <button class="button__iniciar">iniciar sesión</button>
             </form>
         </div>
         <div class="contenedor__links d-flex flex-column justify-content-center align-items-center">
-            <p>¿No tienes cuenta? <span class="links__pag" @click="irResgistro()">Registrate</span></p>
+            <p>¿No tienes cuenta? <span class="links__pag" @click="irResgistro()">Regístrate</span></p>
             <p>¿Olvidaste tu contraseña? <span class="links__pag">Recupéra aquí</span></p>
         </div>
     </div>
 </template>
 
 <style scoped>
+.empty {
+    border: .5px solid #ff5f5f !important;
+    //background-color: #FFCCCC;
+}
+
+.form__input-password{
+    padding-right: 40px;
+}
+
+.eyesPass{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.input__pass{
+    position: relative;
+}
+
 p {
     margin: 0;
     font-family: Poppins;
